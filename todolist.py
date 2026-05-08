@@ -1,21 +1,29 @@
-Dolist{
-Donetask=[]
-Ongoingtask=[] 
+Dolist = {
+    "Donetask": [],
+    "Ongoingtask": []
 }
-Place=Input(“enter ur takes for today separated by a comma: “).split (“ , “)
-For job in Place :
-Print (job)
-Do=Input(“did u finish + {Place}already ? “).captaliz
-If Do==“Yes”:
- Donetask.append (Do)
- Print(“Nice Job “) 
-else :
- Ongoingtask.append (Do)
- Print (“ok! try to not put it off“)
-Print (“———“)
 
-Thelist=Input (“do u want to see ur today progress?(yes, no) “).lower
-if Thelist==“yes”
- Print (Dolist)
-else :
- Print (“ok! “)
+Place = input("Enter your tasks for today separated by a comma: ").split(",")
+
+for job in Place:
+    print(job)
+
+    Do = input(f"Did you finish {job} already? ").capitalize()
+
+    if Do == "Yes":
+        Dolist["Donetask"].append(job)
+        print("Nice Job")
+
+    else:
+        Dolist["Ongoingtask"].append(job)
+        print("Ok! Try not to put it off")
+
+print("--------")
+
+Thelist = input("Do you want to see your today progress? (yes/no): ").lower()
+
+if Thelist == "yes":
+    print(Dolist)
+
+else:
+    print("Ok!")
